@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventsAndDelegates
 {
     class Program
     {
-       
         static void Main(string[] args)
         {
+
+
             var firstItem = new DummyModel(1, "Larry", Grade.Gold);
             var secondItem = new DummyModel(2, "Scott", Grade.Silver);
             var thirdItem = new DummyModel(3, "Robert", Grade.Bronze);

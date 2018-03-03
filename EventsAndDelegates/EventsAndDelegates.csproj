@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionEventArgs.cs" />
+    <Compile Include="ConsoleWrapper.cs" />
     <Compile Include="DummyModel.cs" />
     <Compile Include="Grade.cs" />
+    <Compile Include="IConsoleWrapper.cs" />
     <Compile Include="IListCollectionObserver.cs" />
     <Compile Include="ListCollectionObserver.cs" />
     <Compile Include="ListCollectionObserverWithEvents.cs" />
