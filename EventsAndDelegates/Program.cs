@@ -25,6 +25,18 @@ namespace EventsAndDelegates
             collection.Remove(firstItem);
             collection.Remove(secondItem);
             collection.Remove(thirdItem);
+
+            //Stuff with events
+            Console.WriteLine("_________________________________\nEvent stuff here \n_________________________________");
+
+            var eventsCollection = new ListCollectionObserverWithEvents<DummyModel>();
+            eventsCollection.Added += ListCollectionObserverWithEvents<DummyModel>.ElementWasAddedIntoCollection;
+            eventsCollection.Removed += ListCollectionObserverWithEvents<DummyModel>.ElementWasRemovedFromCollection;
+
+            var item = new DummyModel(1, "Jonas", Grade.Bronze);
+            eventsCollection.Add(item);
+            eventsCollection.Add(new DummyModel(2, "Misteria", Grade.Silver));
+            eventsCollection.Remove(item);
             Console.ReadLine();
         }
     }
