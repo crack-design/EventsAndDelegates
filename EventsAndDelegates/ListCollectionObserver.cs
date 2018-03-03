@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace EventsAndDelegates
 {
-    public class ListCollectionObserver<T> : List<T>
+    public class ListCollectionObserver<T> : List<T>, IListCollectionObserver<T>
     {
         public delegate void CollectionChangeHandler(string msgForCaller);
 
-        private CollectionChangeHandler listOfHandlers;
+        public CollectionChangeHandler listOfHandlers;
 
         public ListCollectionObserver()
         {
@@ -62,9 +62,10 @@ namespace EventsAndDelegates
                 listOfHandlers?.Invoke("Item is not of type __DummyModel__");
             }
         }
-        private void PowerHandlerMethod(string message)
+        internal void PowerHandlerMethod(string message)
         {
             Console.WriteLine(message);
         }
+        
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="CollectionEventArgs.cs" />
     <Compile Include="DummyModel.cs" />
     <Compile Include="Grade.cs" />
+    <Compile Include="IListCollectionObserver.cs" />
     <Compile Include="ListCollectionObserver.cs" />
     <Compile Include="ListCollectionObserverWithEvents.cs" />
     <Compile Include="Program.cs" />
@@ -53,8 +54,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
