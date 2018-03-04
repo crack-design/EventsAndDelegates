@@ -7,10 +7,11 @@ namespace EventsAndDelegates
     {
         public delegate void CollectionChangeHandler(string msgForCaller);
 
-        public CollectionChangeHandler listOfHandlers;
-
-        public ListCollectionObserver()
+        private CollectionChangeHandler listOfHandlers;
+        private readonly IConsoleWrapper _console;
+        public ListCollectionObserver(IConsoleWrapper console)
         {
+            _console = console;
             listOfHandlers += PowerHandlerMethod;
         }
 
@@ -62,9 +63,9 @@ namespace EventsAndDelegates
                 listOfHandlers?.Invoke("Item is not of type __DummyModel__");
             }
         }
-        internal void PowerHandlerMethod(string message)
+        private void PowerHandlerMethod(string message)
         {
-            Console.WriteLine(message);
+            _console.WriteLine(message);
         }
         
     }
