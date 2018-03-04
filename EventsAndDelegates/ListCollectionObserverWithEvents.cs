@@ -11,12 +11,12 @@ namespace EventsAndDelegates
         public delegate void CollectionChangedEventHandler(object sender, CollectionEventArgs e);
         public event CollectionChangedEventHandler Added;
         public event CollectionChangedEventHandler Removed;
-        public static void ElementWasAddedIntoCollection(object sender, CollectionEventArgs e)
+        public static void OnAdd(object sender, CollectionEventArgs e)
         {
             Console.WriteLine(e.msg);
         }
 
-        public static void ElementWasRemovedFromCollection(object sender, CollectionEventArgs e)
+        public static void OnRemove(object sender, CollectionEventArgs e)
         {
             Console.WriteLine(e.msg);
         }

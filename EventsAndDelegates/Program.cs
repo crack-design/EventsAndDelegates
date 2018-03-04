@@ -30,8 +30,8 @@ namespace EventsAndDelegates
             Console.WriteLine("_________________________________\nEvent stuff here \n_________________________________");
 
             var eventsCollection = new ListCollectionObserverWithEvents<DummyModel>();
-            eventsCollection.Added += ListCollectionObserverWithEvents<DummyModel>.ElementWasAddedIntoCollection;
-            eventsCollection.Removed += ListCollectionObserverWithEvents<DummyModel>.ElementWasRemovedFromCollection;
+            eventsCollection.Added += ListCollectionObserverWithEvents<DummyModel>.OnAdd;
+            eventsCollection.Removed += ListCollectionObserverWithEvents<DummyModel>.OnRemove;
 
             var item = new DummyModel(1, "Jonas", Grade.Bronze);
             eventsCollection.Add(item);
