@@ -6,14 +6,15 @@ namespace EventsAndDelegates
     {
         static void Main(string[] args)
         {
-
+            Ninject.IKernel kernel = new Ninject.StandardKernel(new DiBindings());
+            var consoleService = kernel.GetService(typeof(IConsoleWrapper));
 
             var firstItem = new DummyModel(1, "Larry", Grade.Gold);
             var secondItem = new DummyModel(2, "Scott", Grade.Silver);
             var thirdItem = new DummyModel(3, "Robert", Grade.Bronze);
            
 
-            var collection = new ListCollectionObserver<DummyModel>();
+            var collection = new ListCollectionObserver<DummyModel>(consoleService as IConsoleWrapper);
             collection.Add(firstItem);
             collection.Add(secondItem);
             collection.Add(thirdItem);

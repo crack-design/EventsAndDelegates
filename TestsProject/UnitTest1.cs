@@ -10,9 +10,11 @@ namespace TestsProject
         [TestMethod]
         public void AddMethodShouldTriggerAddMessage()
         {
-
-            var collectionMock = new Mock<ListCollectionObserver<DummyModel>>();
-            collectionMock.Object.Add(new DummyModel(1, "SMith", Grade.Bronze));
+            var consoleMock = new Mock<IConsoleWrapper>();
+            var collectionMock = new ListCollectionObserver<DummyModel>(consoleMock.Object);
+            collectionMock.Add(new DummyModel(1, "SMith", Grade.Bronze));
+            var text = "Item with id: 1, Name: SMith and Grade: Bronze was added into collection";
+            consoleMock.Verify(a => a.WriteLine(text), Times.Once);
         }
     }
 }
