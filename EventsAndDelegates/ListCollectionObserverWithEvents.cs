@@ -9,8 +9,8 @@ namespace EventsAndDelegates
     public class ListCollectionObserverWithEvents<T> : List<T>
     {
         public delegate void CollectionChangedEventHandler(object sender, CollectionEventArgs e);
-        public event CollectionChangedEventHandler Added;
-        public event CollectionChangedEventHandler Removed;
+        public virtual event CollectionChangedEventHandler Added;
+        public virtual event CollectionChangedEventHandler Removed;
         public static void OnAdd(object sender, CollectionEventArgs e)
         {
             Console.WriteLine(e.msg);
